@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/InfoBlogs/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/InfoBlogs/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/InfoBlogs/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/InfoBlogs/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/InfoBlogs/css/main.css">
+
+
+<link rel="stylesheet" href="/InfoBlogs/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"thyroidr.github.io","root":"/InfoBlogs/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Muse | Mist":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="BugsProblem Link For $x$. the answer is $(\lfloor \frac{x}{7} \rfloor + 1) \times 7$. 1234567891011121314151617#include &lt;bits&#x2F;stdc++.h&gt;#define rep(a, b, c) for (int a(b); a &lt;&#x3D; (c); a++)#defin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AIC 2004 Intermediate">
+<meta property="og:url" content="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIC-2004-Intermediate/">
+<meta property="og:site_name" content="InfoBlogs">
+<meta property="og:description" content="BugsProblem Link For $x$. the answer is $(\lfloor \frac{x}{7} \rfloor + 1) \times 7$. 1234567891011121314151617#include &lt;bits&#x2F;stdc++.h&gt;#define rep(a, b, c) for (int a(b); a &lt;&#x3D; (c); a++)#defin">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-11-17T08:41:43.000Z">
+<meta property="article:modified_time" content="2019-04-17T01:38:56.000Z">
+<meta property="article:author" content="Ryan Wang">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="simulation">
+<meta property="article:tag" content="union find set">
+<meta property="article:tag" content="minimum spanning tree">
+<meta property="article:tag" content="AIO">
+<meta property="article:tag" content="greedy">
+<meta property="article:tag" content="contests">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIC-2004-Intermediate/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AIC 2004 Intermediate | InfoBlogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/InfoBlogs/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">InfoBlogs</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">by Ryan Wang</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/InfoBlogs/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/InfoBlogs/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/InfoBlogs/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/InfoBlogs/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/thyroidr" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIC-2004-Intermediate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/InfoBlogs/images/avatar.png">
+      <meta itemprop="name" content="Ryan Wang">
+      <meta itemprop="description" content="Museum of my involvement in Informatics Olympiads & competitive programming">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="InfoBlogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AIC 2004 Intermediate
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-17 19:41:43" itemprop="dateCreated datePublished" datetime="2018-11-17T19:41:43+11:00">2018-11-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-17 11:38:56" itemprop="dateModified" datetime="2019-04-17T11:38:56+10:00">2019-04-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/InfoBlogs/categories/AIO-and-AIC/" itemprop="url" rel="index"><span itemprop="name">AIO and AIC</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Bugs"><a href="#Bugs" class="headerlink" title="Bugs"></a>Bugs</h2><p><a target="_blank" rel="noopener" href="http://ausinformatics.com/cgi-bin/train/problem.pl?set=aic04int&problemid=111">Problem Link</a></p>
+<p>For $x$. the answer is $(\lfloor \frac{x}{7} \rfloor + 1) \times 7$.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(a, b, c) for (int a(b); a &lt;= (c); a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a, b, c) for (int a(b); a &gt;= (c); a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">        freopen(<span class="string">&quot;bugsin.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">&quot;bugsout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (x / <span class="number">7</span> + <span class="number">1</span>) * <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Genius"><a href="#Genius" class="headerlink" title="Genius"></a>Genius</h2><p><a target="_blank" rel="noopener" href="http://ausinformatics.com/cgi-bin/train/problem.pl?set=aic04int&problemid=112">Problem Link</a></p>
+<p>Just simulate the game. Since $p \le 10^5$, and the time complexity for simulation is approximately $O(\sqrt{2p})$, simulation would give a satisfactory time.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(a, b, c) for (int a(b); a &lt;= (c); a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a, b, c) for (int a(b); a &gt;= (c); a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> p, n, Ans;</span><br><span class="line"><span class="keyword">int</span> s[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">        freopen(<span class="string">&quot;genin.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">&quot;genout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; p &gt;&gt; n;</span><br><span class="line">    <span class="keyword">if</span>(p == <span class="number">1</span>) <span class="keyword">return</span> !<span class="built_in">printf</span>(<span class="string">&quot;1 %d&quot;</span>, n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> now = <span class="number">1</span>, i = <span class="number">1</span>; n; n -= i, now = now == p ? <span class="number">1</span> : now + <span class="number">1</span>, i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= i)&#123;</span><br><span class="line">            s[now] += n;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        s[now] += i;</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i, <span class="number">1</span>, p)</span><br><span class="line">        <span class="keyword">if</span>(s[i] &gt; s[Ans]) Ans = i;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; Ans &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; s[Ans] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="AFL"><a href="#AFL" class="headerlink" title="AFL"></a>AFL</h2><p><a target="_blank" rel="noopener" href="http://ausinformatics.com/cgi-bin/train/problem.pl?set=aic04int&problemid=114">Problem Link</a></p>
+<p>Once again we can simulate the problem. If we seek for the largest sequence of empty seats naively, the time complexity for each search is $O(n)$. Since we need to search $n$ times, this would result in a time complexity of $O(n^2)$. We can however using a priority queue to maintain all the range of empty seats to reduce the time complexity for each search to $O(\log n)$. This leads to a satisfactory time complexity of $O(n \log n)$.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(a, b, c) for (int a(b); a &lt;= (c); a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a, b, c) for (int a(b); a &gt;= (c); a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">3e4</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Range</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, size;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (Range a, Range b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.size &lt; b.size || (a.size == b.size &amp;&amp; a.l &gt; b.l);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &gt; (Range a, Range b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a.size &gt; b.size || (a.size == b.size &amp;&amp; a.l &lt; b.l);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">priority_queue</span>&lt;Range&gt; q;</span><br><span class="line"><span class="keyword">int</span> n, t, b;</span><br><span class="line"><span class="keyword">int</span> T[N], B[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">        freopen(<span class="string">&quot;aflin.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">&quot;aflout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;t);</span><br><span class="line">    rep(i, <span class="number">1</span>, t)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">    rep(i, <span class="number">1</span>, b)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;B[i]);</span><br><span class="line"></span><br><span class="line">    T[++t] = n + <span class="number">1</span>;</span><br><span class="line">    sort(T + <span class="number">1</span>, T + t + <span class="number">1</span>);</span><br><span class="line">    rep(i, <span class="number">1</span>, t)</span><br><span class="line">        <span class="keyword">if</span>(T[i] - T[i - <span class="number">1</span>] &gt; <span class="number">1</span>)</span><br><span class="line">            q.push( (Range)&#123;T[i - <span class="number">1</span>] + <span class="number">1</span>, T[i] - <span class="number">1</span>, T[i] - T[i - <span class="number">1</span>] + <span class="number">1</span>&#125; );</span><br><span class="line"></span><br><span class="line">    rep(i, <span class="number">1</span>, b)&#123;</span><br><span class="line">        <span class="keyword">auto</span> now = q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, now.l);</span><br><span class="line">        now.size -= B[i];</span><br><span class="line">        now.l += B[i];</span><br><span class="line">        <span class="keyword">if</span>(now.size != <span class="number">0</span>)</span><br><span class="line">            q.push(now);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Atlantis"><a href="#Atlantis" class="headerlink" title="Atlantis"></a>Atlantis</h2><p><a target="_blank" rel="noopener" href="http://ausinformatics.com/cgi-bin/train/problem.pl?set=aic04int&problemid=115">Problem Link</a></p>
+<p>Let $src$ denote the ocean outside the map, then we can notice that whether or not a cell is covered in water in the end is based on the minimum bottleneck path from $src$ to that cell. Precisely, let $x$ be the minimum bottleneck from $src$ to a cell, the cell is covered in water iff $x &lt; f$ or ($x &lt; h$ and $x &gt; Map_{cell}$). If $x &lt; f$, then obviously the water level of $f$ would be able to cover the cell. If $x &lt; h$ and $x &gt; Map_{cell}$, then the cell would be covered by the water level of $h$, and that not all water can escape from the cell. The solution for this problem hence involves building the graph, finding the minimum bottleneck tree (remember that the minimum spanning tree of a graph is also a minimum bottleneck tree of the graph), and finding the bottlenecks.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(a, b, c) for (int a(b); a &lt;= (c); a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a, b, c) for (int a(b); a &gt;= (c); a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> L = <span class="number">1e2</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFindSet</span>&#123;</span></span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> f[N];</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123; rep(i, <span class="number">1</span>, N - <span class="number">1</span>) f[i] = i; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getf</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="keyword">return</span> f[x] == x ? x : f[x] = getf(f[x]); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123; f[getf(x)] = getf(y); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">same</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123; <span class="keyword">return</span> getf(x) == getf(y); &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u, v, w;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeEdge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> to, wt;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> r, c, f, h, ecnt, src, ans;</span><br><span class="line"><span class="keyword">int</span> Map[L][L], Bottleneck[L][L], Dis[N];</span><br><span class="line"><span class="keyword">int</span> Next[<span class="number">8</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">-1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">-1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">-1</span>&#125;, &#123;<span class="number">-1</span>, <span class="number">1</span>&#125;, &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;&#125;;</span><br><span class="line">Edge e[<span class="number">8</span> * N];</span><br><span class="line">UnionFindSet ufs;</span><br><span class="line"><span class="built_in">vector</span>&lt;TreeEdge&gt; tree[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">id</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123; <span class="keyword">return</span> x * c + y; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w)</span></span>&#123; e[++ecnt] = (Edge)&#123;u, v, w&#125;; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i : tree[u])</span><br><span class="line">        <span class="keyword">if</span>(i.to != fa)&#123;</span><br><span class="line">            Dis[i.to] = max(Dis[u], i.wt);</span><br><span class="line">            dfs(i.to, u);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">        freopen(<span class="string">&quot;atlanin.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">&quot;atlanout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// input data</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;h, &amp;f, &amp;r, &amp;c);</span><br><span class="line">    src = r * c + c + <span class="number">1</span>;</span><br><span class="line">    rep(i, <span class="number">1</span>, r)</span><br><span class="line">        rep(j, <span class="number">1</span>, c)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;Map[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// make graph</span></span><br><span class="line">    rep(i, <span class="number">1</span>, r)</span><br><span class="line">        rep(j, <span class="number">1</span>, c)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i == <span class="number">1</span> || j == <span class="number">1</span> || i == r || j == c)</span><br><span class="line">                addedge(src, id(i, j), Map[i][j]);</span><br><span class="line">            rep(d, <span class="number">0</span>, <span class="number">7</span>)&#123;</span><br><span class="line">                <span class="keyword">int</span> nx = i + Next[d][<span class="number">0</span>], ny = j + Next[d][<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">if</span>(nx &lt; <span class="number">1</span> || ny &lt; <span class="number">1</span> || nx &gt; r || ny &gt; c || id(nx, ny) &lt; id(i, j))</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                addedge(id(i, j), id(nx, ny), max(Map[i][j], Map[nx][ny]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// use kruskal to find the minimum bottleneck tree</span></span><br><span class="line">    ufs.init();</span><br><span class="line">    sort(e + <span class="number">1</span>, e + ecnt + <span class="number">1</span>, [](Edge a, Edge b)&#123; <span class="keyword">return</span> a.w &lt; b.w; &#125;);</span><br><span class="line">    rep(i, <span class="number">1</span>, ecnt)&#123;</span><br><span class="line">        <span class="keyword">if</span>(ufs.same(e[i].u, e[i].v))</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        ufs.merge(e[i].u, e[i].v);</span><br><span class="line">        tree[e[i].u].push_back( (TreeEdge)&#123;e[i].v, e[i].w&#125; );</span><br><span class="line">        tree[e[i].v].push_back( (TreeEdge)&#123;e[i].u, e[i].w&#125; );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// find the minimum bottleneck from src to all vertices</span></span><br><span class="line">    dfs(src, <span class="number">0</span>);</span><br><span class="line">    rep(i, <span class="number">1</span>, r)</span><br><span class="line">        rep(j, <span class="number">1</span>, c)</span><br><span class="line">            Bottleneck[i][j] = Dis[id(i, j)];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// find all points whose bottleneck is lower than f</span></span><br><span class="line">    <span class="comment">// or lower than h and higher than its own height.</span></span><br><span class="line">    rep(i, <span class="number">1</span>, r)</span><br><span class="line">        rep(j, <span class="number">1</span>, c)</span><br><span class="line">            <span class="keyword">if</span>(Bottleneck[i][j] &lt; f || (Bottleneck[i][j] &lt; h &amp;&amp; Bottleneck[i][j] &gt; Map[i][j]))</span><br><span class="line">                ans++;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>thyroidr
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIC-2004-Intermediate/" title="AIC 2004 Intermediate">https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO and AIC/AIC-2004-Intermediate/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/InfoBlogs/tags/c/" rel="tag"># c++</a>
+              <a href="/InfoBlogs/tags/simulation/" rel="tag"># simulation</a>
+              <a href="/InfoBlogs/tags/union-find-set/" rel="tag"># union find set</a>
+              <a href="/InfoBlogs/tags/minimum-spanning-tree/" rel="tag"># minimum spanning tree</a>
+              <a href="/InfoBlogs/tags/AIO/" rel="tag"># AIO</a>
+              <a href="/InfoBlogs/tags/greedy/" rel="tag"># greedy</a>
+              <a href="/InfoBlogs/tags/contests/" rel="tag"># contests</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIO-2018-Intermediate/" rel="prev" title="AIO 2018 Intermediate">
+      <i class="fa fa-chevron-left"></i> AIO 2018 Intermediate
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIC-2004-Senior/" rel="next" title="AIC 2004 Senior">
+      AIC 2004 Senior <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bugs"><span class="nav-number">1.</span> <span class="nav-text">Bugs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Genius"><span class="nav-number">2.</span> <span class="nav-text">Genius</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AFL"><span class="nav-number">3.</span> <span class="nav-text">AFL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Atlantis"><span class="nav-number">4.</span> <span class="nav-text">Atlantis</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryan Wang"
+      src="/InfoBlogs/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Ryan Wang</p>
+  <div class="site-description" itemprop="description">Museum of my involvement in Informatics Olympiads & competitive programming</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/InfoBlogs/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/InfoBlogs/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/InfoBlogs/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thyroidr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thyroidr" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ryanxiaowang2001@gmail.com" title="E-Mail → mailto:ryanxiaowang2001@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/rxw/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;rxw&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/InfoBlogs/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Wang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/InfoBlogs/lib/anime.min.js"></script>
+  <script src="/InfoBlogs/lib/velocity/velocity.min.js"></script>
+  <script src="/InfoBlogs/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/InfoBlogs/js/utils.js"></script>
+
+<script src="/InfoBlogs/js/motion.js"></script>
+
+
+<script src="/InfoBlogs/js/schemes/muse.js"></script>
+
+
+<script src="/InfoBlogs/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

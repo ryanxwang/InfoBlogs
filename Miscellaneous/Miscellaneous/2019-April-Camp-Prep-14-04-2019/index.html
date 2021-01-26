@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/InfoBlogs/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/InfoBlogs/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/InfoBlogs/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/InfoBlogs/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/InfoBlogs/css/main.css">
+
+
+<link rel="stylesheet" href="/InfoBlogs/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"thyroidr.github.io","root":"/InfoBlogs/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Muse | Mist":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Persistent Segtree PracticeThe general idea of persistent segtree is to never modify the nodes of a segtree, and instead of create new nodes, such that historical versions can be accessed. One can bui">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019 April Camp Prep - 14&#x2F;04&#x2F;2019">
+<meta property="og:url" content="https://thyroidr.github.io/InfoBlogs/Miscellaneous/Miscellaneous/2019-April-Camp-Prep-14-04-2019/">
+<meta property="og:site_name" content="InfoBlogs">
+<meta property="og:description" content="Persistent Segtree PracticeThe general idea of persistent segtree is to never modify the nodes of a segtree, and instead of create new nodes, such that historical versions can be accessed. One can bui">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-04-16T11:31:04.000Z">
+<meta property="article:modified_time" content="2019-04-17T01:38:56.000Z">
+<meta property="article:author" content="Ryan Wang">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://thyroidr.github.io/InfoBlogs/Miscellaneous/Miscellaneous/2019-April-Camp-Prep-14-04-2019/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>2019 April Camp Prep - 14/04/2019 | InfoBlogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/InfoBlogs/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">InfoBlogs</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">by Ryan Wang</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/InfoBlogs/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/InfoBlogs/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/InfoBlogs/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/InfoBlogs/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/thyroidr" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thyroidr.github.io/InfoBlogs/Miscellaneous/Miscellaneous/2019-April-Camp-Prep-14-04-2019/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/InfoBlogs/images/avatar.png">
+      <meta itemprop="name" content="Ryan Wang">
+      <meta itemprop="description" content="Museum of my involvement in Informatics Olympiads & competitive programming">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="InfoBlogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2019 April Camp Prep - 14/04/2019
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-04-16 21:31:04" itemprop="dateCreated datePublished" datetime="2019-04-16T21:31:04+10:00">2019-04-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-17 11:38:56" itemprop="dateModified" datetime="2019-04-17T11:38:56+10:00">2019-04-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/InfoBlogs/categories/Miscellaneous/" itemprop="url" rel="index"><span itemprop="name">Miscellaneous</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Persistent-Segtree-Practice"><a href="#Persistent-Segtree-Practice" class="headerlink" title="Persistent Segtree Practice"></a>Persistent Segtree Practice</h2><p>The general idea of persistent segtree is to never modify the nodes of a segtree, and instead of create new nodes, such that historical versions can be accessed. One can build a fenwick tree on top of a persistent segtree, which would allow for modification of &quot;history&quot;.</p>
+<a id="more"></a>
+<h3 id="Luogu-P2468"><a href="#Luogu-P2468" class="headerlink" title="Luogu P2468"></a>Luogu P2468</h3><p>Giving a $R \times C$ matrix, and $M$ queries, the $i-th$ of which has the form:</p>
+<blockquote>
+<p>what is the least number of elements from the sub-rectangle $(x_{1, i}, y_{1, i})$ to $(x_{2, i}, y_{2, i})$ needed such that their sum is greater than equal to $h_i$?</p>
+</blockquote>
+<p>For subtask $1$ ($50%$): $R, C \le 200, M \le 200,000$</p>
+<p>For subtask $2$ ($50%$): $R = 1, C \le 500,000, M \le 20,000$</p>
+<p>Additionally all elements of the matrix are positive and no greater than $1000$.</p>
+<p>For subtask $1$ we can find the number of elements in each sub-rectangle, that is greater than $k$, and their sum in $O(RC)$, with a constant factor of $1000$. This allows us to binary search the answer. The second subtask can be solved with both persistent segtree and square root decomposition. For the sake of practice here I used persistent segtree (it is also lower in time complexity).</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inc(a,b,c) for(int a(b);a&lt;=(c);a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a,b,c) for(int a(b);a&gt;=(c);a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_N = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">100003</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_SIZE = <span class="number">12000000</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PersistentSegtree</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> sum[MAX_SIZE], cnt[MAX_SIZE], lc[MAX_SIZE], rc[MAX_SIZE];</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l == r) <span class="keyword">return</span>;</span><br><span class="line">        sum[x] = sum[lc[x]] + sum[rc[x]];</span><br><span class="line">        cnt[x] = cnt[lc[x]] + cnt[rc[x]];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> root[<span class="number">500005</span>], nodeCnt, rootCnt;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">            sum[x] = cnt[x] = lc[x] = rc[x] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        build(lc[x] = ++nodeCnt, l, mid);</span><br><span class="line">        build(rc[x] = ++nodeCnt, mid + <span class="number">1</span>, r);</span><br><span class="line">        merge(x, l, r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> pre, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">            sum[now] = sum[pre] + val;</span><br><span class="line">            cnt[now] = cnt[pre] + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(pos &lt;= mid)</span><br><span class="line">            rc[now] = rc[pre], update(lc[now] = ++nodeCnt, lc[pre], l, mid, pos, val);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            lc[now] = lc[pre], update(rc[now] = ++nodeCnt, rc[pre], mid + <span class="number">1</span>, r, pos, val);</span><br><span class="line">        merge(now, l, r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">querySum</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> pre)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sum[now] - sum[pre];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> pre, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> req)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l == r)</span><br><span class="line">            <span class="keyword">return</span> (req % l == <span class="number">0</span> ? req / l : req / l + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(sum[rc[now]] - sum[rc[pre]] &gt;= req)</span><br><span class="line">            <span class="keyword">return</span> query(rc[now], rc[pre], mid + <span class="number">1</span>, r, req);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> cnt[rc[now]] - cnt[rc[pre]] + query(lc[now], lc[pre], l, mid, req - (sum[rc[now]] - sum[rc[pre]]));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> R, C, M;</span><br><span class="line">PersistentSegtree S;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> case1&#123;</span><br><span class="line">    <span class="keyword">int</span> val[<span class="number">205</span>][<span class="number">205</span>], sum[<span class="number">205</span>][<span class="number">205</span>][<span class="number">1005</span>], cnt[<span class="number">205</span>][<span class="number">205</span>][<span class="number">1005</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">        inc(x, <span class="number">1</span>, R)</span><br><span class="line">            inc(y, <span class="number">1</span>, C)</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;val[x][y]);</span><br><span class="line"></span><br><span class="line">        inc(x, <span class="number">1</span>, R)</span><br><span class="line">            inc(y, <span class="number">1</span>, C)</span><br><span class="line">                inc(k, <span class="number">0</span>, <span class="number">1001</span>)&#123;</span><br><span class="line">                    sum[x][y][k] = sum[x - <span class="number">1</span>][y][k] + sum[x][y - <span class="number">1</span>][k] - sum[x - <span class="number">1</span>][y - <span class="number">1</span>][k] + (val[x][y] &gt;= k ? val[x][y] : <span class="number">0</span>);</span><br><span class="line">                    cnt[x][y][k] = cnt[x - <span class="number">1</span>][y][k] + cnt[x][y - <span class="number">1</span>][k] - cnt[x - <span class="number">1</span>][y - <span class="number">1</span>][k] + (val[x][y] &gt;= k ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">                &#125;</span><br><span class="line">        </span><br><span class="line">        inc(i, <span class="number">1</span>, M)&#123;</span><br><span class="line">            <span class="keyword">int</span> x1, y1, x2, y2, h;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d%d&quot;</span>, &amp;x1, &amp;y1, &amp;x2, &amp;y2, &amp;h);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> lo = <span class="number">0</span>, hi = <span class="number">1001</span>, ans = <span class="number">1001</span>;</span><br><span class="line">            <span class="keyword">while</span>(lo &lt;= hi)&#123;</span><br><span class="line">                <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span>(sum[x2][y2][mid] - sum[x1 - <span class="number">1</span>][y2][mid] - sum[x2][y1 - <span class="number">1</span>][mid] + sum[x1 - <span class="number">1</span>][y1 - <span class="number">1</span>][mid] &lt; h)</span><br><span class="line">                    hi = mid - <span class="number">1</span>, ans = mid;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(ans == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">&quot;Poor QLW&quot;</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> needed = h - (sum[x2][y2][ans] - sum[x1 - <span class="number">1</span>][y2][ans] - sum[x2][y1 - <span class="number">1</span>][ans] + sum[x1 - <span class="number">1</span>][y1 - <span class="number">1</span>][ans]);</span><br><span class="line">            <span class="keyword">int</span> res = cnt[x2][y2][ans] - cnt[x1 - <span class="number">1</span>][y2][ans] - cnt[x2][y1 - <span class="number">1</span>][ans] + cnt[x1 - <span class="number">1</span>][y1 - <span class="number">1</span>][ans];</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, res + (needed % (ans - <span class="number">1</span>) == <span class="number">0</span> ? needed / (ans - <span class="number">1</span>) : needed / (ans - <span class="number">1</span>) + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> case2&#123;</span><br><span class="line">    <span class="keyword">int</span> val[<span class="number">500005</span>], pos[<span class="number">500005</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">        inc(i, <span class="number">1</span>, C)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;val[i]);</span><br><span class="line">        </span><br><span class="line">        S.build(S.root[<span class="number">0</span>] = ++S.nodeCnt, <span class="number">1</span>, <span class="number">1000</span>);</span><br><span class="line">        inc(i, <span class="number">1</span>, C)&#123;</span><br><span class="line">            S.update(S.root[i] = ++S.nodeCnt, S.root[i - <span class="number">1</span>], <span class="number">1</span>, <span class="number">1000</span>, val[i], val[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        inc(i, <span class="number">1</span>, M)&#123;</span><br><span class="line">            <span class="keyword">int</span> x1, y1, x2, y2, h;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d%d&quot;</span>, &amp;x1, &amp;y1, &amp;x2, &amp;y2, &amp;h);</span><br><span class="line">            <span class="keyword">if</span>(S.querySum(S.root[y2], S.root[y1 - <span class="number">1</span>]) &lt; h)&#123;</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">&quot;Poor QLW&quot;</span>);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, S.query(S.root[y2], S.root[y1 - <span class="number">1</span>], <span class="number">1</span>, <span class="number">1000</span>, h));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> DEBUG</span></span><br><span class="line">        freopen(<span class="string">&quot;2468.in&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">&quot;2468.out&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;R, &amp;C, &amp;M);</span><br><span class="line">    <span class="keyword">if</span>(R != <span class="number">1</span>)</span><br><span class="line">        case1::solve();</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        case2::solve();</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Luogu-P3157"><a href="#Luogu-P3157" class="headerlink" title="Luogu P3157"></a>Luogu P3157</h3><p>Given an array $A$ of $N$ elements, let an inverse pair be defined as a pair $(i, j)$ where $1 \le i &lt; j \le N$ and $A_i &gt; A_j$. $M$ elements will be deleted in the order given from $A$, output the number of inverse pairs in $A$ before each deletion.</p>
+<p>$1 \le M \le N \le 100,000, M \le 500,000$</p>
+<p>First use a fenwick tree to record for each $i$, the number of inverse pairs it forms with elements before it, and the number of inverse pairs it forms with elements after it. The number of inverse pairs we delete when we delete $i$ will not be greater than the sum of these two elements, and the different is just the number of inverse pairs it makes with already deleted elements. To find the number of inverse pairs it makes with already deleted numbers we can use a persistent segtree in a fenwick tree. Notice that for $i$ to make an inverse pair with a deleted $j$, $j$ is either smaller than $i$ and after $i$, or greater than $i$ and before $i$. Here we treat each root of a node in a fenwick tree, each prefix of the fenwick tree stores not a value, but a segtree. The segtree represented by the $k$-th prefix represents all the deleted elements with position up to $k$, and each segtree is sorted to allow us to query the number of elements whose value is in a range. </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inc(a,b,c) for(int a(b);a&lt;=(c);a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a,b,c) for(int a(b);a&gt;=(c);a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">100003</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FenwickTree</span>&#123;</span></span><br><span class="line">    ll f[MAX_N];</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lowbits</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="keyword">return</span> x &amp; -x; &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123; <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="keyword">sizeof</span>(f)); &#125;</span><br><span class="line">    <span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; ll res = <span class="number">0</span>; <span class="keyword">while</span>(x)&#123; res += f[x]; x -= lowbits(x); &#125; <span class="keyword">return</span> res; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> pos, ll val)</span></span>&#123; <span class="keyword">while</span>(pos &lt; MAX_N)&#123; f[pos] += val; pos += lowbits(pos); &#125; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PersistentSegtreeWithPastEditing</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> cnt[MAX_N * <span class="number">60</span>], lc[MAX_N * <span class="number">60</span>], rc[MAX_N * <span class="number">60</span>];</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lowbits</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="keyword">return</span> x &amp; -x; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l == r) <span class="keyword">return</span>;</span><br><span class="line">        cnt[x] = cnt[lc[x]] + cnt[rc[x]];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span>&amp; x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>)</span><br><span class="line">            x = ++nodeCnt;</span><br><span class="line">        <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">            cnt[x] = lc[x] = rc[x] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        build(lc[x], l, mid);</span><br><span class="line">        build(rc[x], mid + <span class="number">1</span>, r);</span><br><span class="line">        merge(x, l, r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">edit</span><span class="params">(<span class="keyword">int</span>&amp; x, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>)</span><br><span class="line">            x = ++nodeCnt;</span><br><span class="line"></span><br><span class="line">        cnt[x]++;</span><br><span class="line">        <span class="keyword">if</span>(l == r)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(pos &lt;= mid)</span><br><span class="line">            edit(lc[x], l, mid, pos);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            edit(rc[x], mid + <span class="number">1</span>, r, pos);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ll <span class="title">find</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr)</span><br><span class="line">            <span class="keyword">return</span> cnt[x];</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        ll res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(ql &lt;= mid)</span><br><span class="line">            res += find(lc[x], l, mid, ql, qr);</span><br><span class="line">        <span class="keyword">if</span>(mid + <span class="number">1</span> &lt;= qr)</span><br><span class="line">            res += find(rc[x], mid + <span class="number">1</span>, r, ql, qr);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">int</span> nodeCnt, root[MAX_N];</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> _N)</span></span>&#123;</span><br><span class="line">        N = _N;</span><br><span class="line">        build(root[<span class="number">0</span>] = ++nodeCnt, <span class="number">1</span>, N);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(pos &lt;= N)&#123;</span><br><span class="line">            edit(root[pos], <span class="number">1</span>, N, val);</span><br><span class="line">            pos += lowbits(pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> pre, <span class="keyword">int</span> now, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        ll res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(now)&#123;</span><br><span class="line">            res += find(root[now], <span class="number">1</span>, N, l, r);</span><br><span class="line">            now -= lowbits(now);</span><br><span class="line">        &#125;</span><br><span class="line">        pre--;</span><br><span class="line">        <span class="keyword">while</span>(pre)&#123;</span><br><span class="line">            res -= find(root[pre], <span class="number">1</span>, N, l, r);</span><br><span class="line">            pre -= lowbits(pre);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> val[MAX_N], pos[MAX_N];</span><br><span class="line">ll ans;</span><br><span class="line">ll beforeAndGreater[MAX_N], afterAndLower[MAX_N];</span><br><span class="line">FenwickTree BIT;</span><br><span class="line">PersistentSegtreeWithPastEditing S;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> DEBUG</span></span><br><span class="line">        freopen(<span class="string">&quot;3157.in&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">&quot;3157.out&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    inc(i, <span class="number">1</span>, N)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;val[i]);</span><br><span class="line">        pos[val[i]] = i;</span><br><span class="line">        beforeAndGreater[i] = BIT.query(N) - BIT.query(val[i]);</span><br><span class="line">        ans += beforeAndGreater[i];</span><br><span class="line">        BIT.update(val[i], <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    BIT.init();</span><br><span class="line">    dec(i, N, <span class="number">1</span>)&#123;</span><br><span class="line">        afterAndLower[i] = BIT.query(val[i] - <span class="number">1</span>);</span><br><span class="line">        BIT.update(val[i], <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    S.init(N);</span><br><span class="line">    inc(i, <span class="number">1</span>, M)&#123;</span><br><span class="line">        <span class="keyword">int</span> deletedVal;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;deletedVal);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> valPos = pos[deletedVal];</span><br><span class="line">        ans -= beforeAndGreater[valPos] + afterAndLower[valPos];</span><br><span class="line">        ans += S.query(<span class="number">1</span>, valPos - <span class="number">1</span>, deletedVal + <span class="number">1</span>, N) + S.query(valPos + <span class="number">1</span>, N, <span class="number">1</span>, deletedVal - <span class="number">1</span>);</span><br><span class="line">        S.update(valPos, deletedVal);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Introduction-to-Convex-Hull-Trick-CHT"><a href="#Introduction-to-Convex-Hull-Trick-CHT" class="headerlink" title="Introduction to Convex Hull Trick (CHT)"></a>Introduction to Convex Hull Trick (CHT)</h2><p>Check this out <a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/63823">CodeForces Blog</a></p>
+<h3 id="APIO-2014-Split-the-Sequence-Luogu-P3648"><a href="#APIO-2014-Split-the-Sequence-Luogu-P3648" class="headerlink" title="APIO 2014 Split the Sequence (Luogu P3648)"></a>APIO 2014 Split the Sequence (Luogu P3648)</h3><p>The problem statement can be found at <a target="_blank" rel="noopener" href="http://apio-olympiad.org/2014/apio2014_problemset.pdf">PDF</a>.</p>
+<p>Observe that no matter how the parts are divided, each final part would have always been multiplied with the rest of the sequence. We are therefore only concerned about what are the final parts. Let $s_i$ denote the prefix sum up to $i$, and $f_{i, k}$ denote the maximum score in the prefix up to $i$, with $k$ divides, we have,<br>$$f_{i, k} = \max_{0 \le j &lt; i}{f_{j, k - 1} + s_j(s_i - s_j)}$$</p>
+<p>Note that this is a linear function of $s_i$, and we may hence use CHT to optimise the DP. Since $s_i$ is non-decreasing, the CHT runs in amortised constant time. This gives a solution of $O(NK)$.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inc(a, b, c) for(int a(b); a &lt;= (c); a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a, b, c) for(int a(b); a &gt;= (c); a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_K = <span class="number">205</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, K;</span><br><span class="line"><span class="keyword">int</span> q[MAX_N], pre[MAX_N][MAX_K];</span><br><span class="line">ll val[MAX_N], sum[MAX_N], f[MAX_N], g[MAX_N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">intersect</span><span class="params">(<span class="keyword">int</span> j, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(sum[j] == sum[k])</span><br><span class="line">        <span class="keyword">return</span> -INF;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span> * ((g[k] - sum[k] * sum[k]) - (g[j] - sum[j] * sum[j])) / (sum[j] - sum[k]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> LOCALTEST</span></span><br><span class="line">        freopen(<span class="string">&quot;3648.in&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">&quot;3648.out&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;N, &amp;K);</span><br><span class="line">    inc(i, <span class="number">1</span>, N)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;val[i]);</span><br><span class="line">    inc(i, <span class="number">1</span>, N)</span><br><span class="line">        sum[i] = sum[i - <span class="number">1</span>] + val[i];</span><br><span class="line">    </span><br><span class="line">    inc(j, <span class="number">1</span>, K)&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">1</span>, r = <span class="number">0</span>;</span><br><span class="line">        q[++r] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        inc(i, <span class="number">1</span>, N)&#123;</span><br><span class="line">            <span class="keyword">while</span>(l &lt; r &amp;&amp; intersect(q[l], q[l + <span class="number">1</span>]) &lt;= sum[i])</span><br><span class="line">                ++l;</span><br><span class="line">            f[i] = g[q[l]] + sum[q[l]] * (sum[i] - sum[q[l]]);</span><br><span class="line">            pre[i][j] = q[l];</span><br><span class="line">            <span class="keyword">while</span>(l &lt; r &amp;&amp; intersect(i, q[r]) &lt;= intersect(q[r - <span class="number">1</span>], q[r]))</span><br><span class="line">                --r;</span><br><span class="line">            q[++r] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">memcpy</span>(g, f, <span class="keyword">sizeof</span>(f));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, f[N]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = N, i = K; i &gt;= <span class="number">1</span>; i--)</span><br><span class="line">        x = pre[x][i], <span class="built_in">printf</span>(<span class="string">&quot;%d%c&quot;</span>, x, <span class="string">&quot; \n&quot;</span>[i == <span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Ryan Wang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://thyroidr.github.io/InfoBlogs/Miscellaneous/Miscellaneous/2019-April-Camp-Prep-14-04-2019/" title="2019 April Camp Prep - 14&#x2F;04&#x2F;2019">https://thyroidr.github.io/InfoBlogs/Miscellaneous/Miscellaneous/2019-April-Camp-Prep-14-04-2019/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/InfoBlogs/IOI/IOI/IOI-2008-Pyramid-Base/" rel="prev" title="IOI 2008 Pyramid Base">
+      <i class="fa fa-chevron-left"></i> IOI 2008 Pyramid Base
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/InfoBlogs/uncategorized/Miscellaneous/2019-April-Camp-Prep-15-04-2019/" rel="next" title="2019 April Camp Prep - 15/04/2019">
+      2019 April Camp Prep - 15/04/2019 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Persistent-Segtree-Practice"><span class="nav-number">1.</span> <span class="nav-text">Persistent Segtree Practice</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Luogu-P2468"><span class="nav-number">1.1.</span> <span class="nav-text">Luogu P2468</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Luogu-P3157"><span class="nav-number">1.2.</span> <span class="nav-text">Luogu P3157</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction-to-Convex-Hull-Trick-CHT"><span class="nav-number">2.</span> <span class="nav-text">Introduction to Convex Hull Trick (CHT)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#APIO-2014-Split-the-Sequence-Luogu-P3648"><span class="nav-number">2.1.</span> <span class="nav-text">APIO 2014 Split the Sequence (Luogu P3648)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryan Wang"
+      src="/InfoBlogs/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Ryan Wang</p>
+  <div class="site-description" itemprop="description">Museum of my involvement in Informatics Olympiads & competitive programming</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/InfoBlogs/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/InfoBlogs/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/InfoBlogs/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thyroidr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thyroidr" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ryanxiaowang2001@gmail.com" title="E-Mail → mailto:ryanxiaowang2001@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/rxw/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;rxw&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/InfoBlogs/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Wang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/InfoBlogs/lib/anime.min.js"></script>
+  <script src="/InfoBlogs/lib/velocity/velocity.min.js"></script>
+  <script src="/InfoBlogs/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/InfoBlogs/js/utils.js"></script>
+
+<script src="/InfoBlogs/js/motion.js"></script>
+
+
+<script src="/InfoBlogs/js/schemes/muse.js"></script>
+
+
+<script src="/InfoBlogs/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

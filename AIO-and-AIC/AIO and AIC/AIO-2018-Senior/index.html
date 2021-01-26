@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/InfoBlogs/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/InfoBlogs/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/InfoBlogs/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/InfoBlogs/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/InfoBlogs/css/main.css">
+
+
+<link rel="stylesheet" href="/InfoBlogs/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"thyroidr.github.io","root":"/InfoBlogs/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Muse | Mist":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Street ConstructionProblem Link Given $k$ parks on $n$ chunks of land, we have $n-k$ chunks of land for building houses, and that we can have at most $k+1$ blocks of houses. The problem hence transfor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AIO 2018 Senior">
+<meta property="og:url" content="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIO-2018-Senior/">
+<meta property="og:site_name" content="InfoBlogs">
+<meta property="og:description" content="Street ConstructionProblem Link Given $k$ parks on $n$ chunks of land, we have $n-k$ chunks of land for building houses, and that we can have at most $k+1$ blocks of houses. The problem hence transfor">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-12-22T10:48:49.000Z">
+<meta property="article:modified_time" content="2019-04-17T01:38:56.000Z">
+<meta property="article:author" content="Ryan Wang">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="AIO">
+<meta property="article:tag" content="contests">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIO-2018-Senior/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>AIO 2018 Senior | InfoBlogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/InfoBlogs/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">InfoBlogs</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">by Ryan Wang</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/InfoBlogs/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/InfoBlogs/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/InfoBlogs/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/InfoBlogs/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/thyroidr" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIO-2018-Senior/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/InfoBlogs/images/avatar.png">
+      <meta itemprop="name" content="Ryan Wang">
+      <meta itemprop="description" content="Museum of my involvement in Informatics Olympiads & competitive programming">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="InfoBlogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AIO 2018 Senior
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-22 21:48:49" itemprop="dateCreated datePublished" datetime="2018-12-22T21:48:49+11:00">2018-12-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-17 11:38:56" itemprop="dateModified" datetime="2019-04-17T11:38:56+10:00">2019-04-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/InfoBlogs/categories/AIO-and-AIC/" itemprop="url" rel="index"><span itemprop="name">AIO and AIC</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Street-Construction"><a href="#Street-Construction" class="headerlink" title="Street Construction"></a>Street Construction</h2><p><a target="_blank" rel="noopener" href="http://ausinformatics.com/cgi-bin/train/problem.pl?set=aio18int&problemid=1032">Problem Link</a></p>
+<p>Given $k$ parks on $n$ chunks of land, we have $n-k$ chunks of land for building houses, and that we can have at most $k+1$ blocks of houses. The problem hence transform to that of pigeonhole principle, where we have $n-k$ pigeons and $k+1$ pigeonholes.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, p, blockCount, Ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    freopen(<span class="string">&quot;streetin.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">&quot;streetout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;p);</span><br><span class="line">    blockCount = p+<span class="number">1</span>;</span><br><span class="line">    n -= p;</span><br><span class="line">    <span class="keyword">if</span>(n % blockCount == <span class="number">0</span>) Ans = n / blockCount;</span><br><span class="line">    <span class="keyword">else</span> Ans = n / blockCount + <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h2 id="Cloud-Coverage"><a href="#Cloud-Coverage" class="headerlink" title="Cloud Coverage"></a>Cloud Coverage</h2><p><a target="_blank" rel="noopener" href="http://ausinformatics.com/cgi-bin/train/problem.pl?set=aio18int&problemid=1034">Problem Link</a></p>
+<p>Let $D_i$ be the distance between the $i$-th person and the $i+1$-th person, then the answer is the minimum consecutive sub-sequence of $D$ containing $k$ elements. Any cloud longer than this would cover more than $k$ people at some point. Clouds shorter than this may work, but we are looking for the maximum length of the cloud.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fo(counter, starter, ender) for(int counter = starter; counter &lt;= ender; counter++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 2147483647</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, dis[N], k, Min = INF, sum;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    freopen(<span class="string">&quot;cloudin.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">&quot;cloudout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;k);</span><br><span class="line">    fo(i, <span class="number">1</span>, n<span class="number">-1</span>)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;dis[i]);</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j  = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; k) sum += dis[++i];</span><br><span class="line">    Min = min(Min, sum);</span><br><span class="line">    <span class="keyword">while</span>(i &lt; n<span class="number">-1</span>)&#123;</span><br><span class="line">        sum -= dis[j]; j++;</span><br><span class="line">        i++; sum += dis[i];</span><br><span class="line">        Min = min(Min, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Min);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Janitor"><a href="#Janitor" class="headerlink" title="Janitor"></a>Janitor</h2><p><a target="_blank" rel="noopener" href="http://ausinformatics.com/cgi-bin/train/problem.pl?set=aio18int&problemid=1035">Problem Link</a></p>
+<p>Notice that we only need to pour water on a cell if it has no neighbouring cells higher than it, otherwise it is always better to cover this tiles by covering the tile higher than it. This would allow us to find the answer before replacements are made.</p>
+<p>We can of course redo this for every replacement, however, notice that replacements only affect the height of a tile, and that the height of a tile is only affects its neighbours. Hence, for each replacement, we only need to check the tile being changed and its neighbouring tiles.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> r, c, q, s[<span class="number">11</span>][<span class="number">100010</span>], Next[<span class="number">4</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;&#125;, sum, cx, cy, ch;</span><br><span class="line"><span class="keyword">bool</span> book[<span class="number">11</span>][<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">checkTile</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nx, ny;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">3</span>; i++)&#123;</span><br><span class="line">        nx = x + Next[i][<span class="number">0</span>], ny = y + Next[i][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(nx &lt; <span class="number">1</span> || nx &gt; r || ny &lt; <span class="number">1</span> || ny &gt; c)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span>(s[nx][ny] &gt; s[x][y])&#123;flag = <span class="literal">false</span>; <span class="keyword">break</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(book[x][y] != flag)&#123;</span><br><span class="line">        book[x][y] = flag;</span><br><span class="line">        <span class="keyword">if</span>(flag) sum++;</span><br><span class="line">        <span class="keyword">else</span> sum--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    freopen(<span class="string">&quot;janitorin.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">&quot;janitorout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;r, &amp;c, &amp;q);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= r; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= c; j++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;s[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= r; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= c; j++)</span><br><span class="line">            checkTile(i, j);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= q; l++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;cx, &amp;cy, &amp;ch);</span><br><span class="line">        s[cx][cy] = ch;</span><br><span class="line">        checkTile(cx, cy);</span><br><span class="line">        <span class="keyword">int</span> nx, ny;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">3</span>; i++)&#123;</span><br><span class="line">            nx = cx + Next[i][<span class="number">0</span>], ny = cy + Next[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(nx &lt; <span class="number">1</span> || nx &gt; r || ny &lt; <span class="number">1</span> || ny &gt; c)<span class="keyword">continue</span>;</span><br><span class="line">            checkTile(nx, ny);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Detective"><a href="#Detective" class="headerlink" title="Detective"></a>Detective</h2><p><a target="_blank" rel="noopener" href="http://orac.amt.edu.au/cgi-bin/train/problem.pl?set=aio18sen&problemid=1036">Problem Link</a></p>
+<p>We can first make the following observations:</p>
+<ul>
+<li>Edges of type $1$ imply that two people must both be lying or truthful.</li>
+<li>Edges of type $2$ imply that two people must cannot be both lying or truthful</li>
+</ul>
+<p>This will allow us to two colour each connected component of the graph, and detect some conflicting statements while doing so. Furthermore, this will allow us to group the people, and have the opposition groups - groups that have type 2 edges in between. </p>
+<p>We can then proceed to observe that if a group has multiple outgoing type 3 edges, it must be lying and that its opposite group must be truthful. This will allow us to guarentee that some people are innocent and that some people must have stolen the cookie (call them type 1 suspect). If we find multiple people to have stolen the cookie, we detect a confliction. Note that even if there is only one person who must have stolen the cookie, we cannot end our program since there may still be conflicts.</p>
+<p>The next observation involves pairs of groups that are opposite to each other, with unknown truthfulness. If both groups in the pair have accusations (we know each of them only have one accusation), and that they accuse different people (otherwise there is a conflict), then one of the people they accuse must have stolen the cookie. This is followed by the observation that if someone is targeted in this fashion twice, then they must be the suspect (call them type 2 suspect). Further thoughts also show us that if multiple pairs of groups are to accuse in this way, there accusations have to all overlap in someway. We can maintain their accusations using <code>std::set</code>. </p>
+<p>At last, if both type 1 and 2 suspect exist, they must be the same and not marked as innocent, and we can output the answer, or a conflict occurs. If only one of them exist, they must not be innocent or conflict occurs. If none of them exist, we should look at the suspects maintained by our std::set and output all elements in it that are not innocent. If we have still not outputed anything, we output everyone who is not marked innocent. </p>
+<p>(solution description may not correspond with code, refer to the code for any conflicts between the solution description and code)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(a, b, c) for (int a(b); a &lt;= (c); a++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dec(a, b, c) for (int a(b); a &gt;= (c); a--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> type, u, v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;Edge&gt; G[N];</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; accusations[<span class="number">2</span> * N];</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; specialSuspects;</span><br><span class="line"><span class="keyword">int</span> n, m, colCnt, criminalCnt, suspectCnt, specialCriminal;</span><br><span class="line"><span class="keyword">int</span> colour[N], colSize[<span class="number">2</span> * N];</span><br><span class="line"><span class="keyword">bool</span> book[N], lying[<span class="number">2</span> * N], truthful[<span class="number">2</span> * N], innocent[N], criminal[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">kill</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot;MISTAKE&quot;</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> col)</span></span>&#123;</span><br><span class="line">    book[u] = <span class="literal">true</span>;</span><br><span class="line">    colour[u] = col;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> edge : G[u])&#123;</span><br><span class="line">        <span class="keyword">if</span>(edge.type == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(book[edge.v] &amp;&amp; colour[edge.v] != col)</span><br><span class="line">                kill();</span><br><span class="line">            <span class="keyword">if</span>(!book[edge.v])</span><br><span class="line">                dfs(edge.v, col);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(edge.type == <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(book[edge.v] &amp;&amp; colour[edge.v] != col ^ <span class="number">1</span>)</span><br><span class="line">                kill();</span><br><span class="line">            <span class="keyword">if</span>(!book[edge.v])</span><br><span class="line">                dfs(edge.v, col ^ <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    freopen(<span class="string">&quot;detectivein.txt&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">&quot;detectiveout.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, <span class="built_in">stdout</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    rep(i, <span class="number">1</span>, m)&#123;</span><br><span class="line">        <span class="keyword">int</span> u, v, type;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;u, &amp;v, &amp;type);</span><br><span class="line">        G[u].push_back( (Edge)&#123;type, u, v&#125; );</span><br><span class="line">        <span class="keyword">if</span>(type != <span class="number">3</span>)</span><br><span class="line">            G[v].push_back( (Edge)&#123;type, v, u&#125; );   </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    rep(i, <span class="number">1</span>, n)</span><br><span class="line">        <span class="keyword">if</span>(!book[i])&#123;</span><br><span class="line">            dfs(i, colCnt);</span><br><span class="line">            colCnt += <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    colCnt--;</span><br><span class="line">    </span><br><span class="line">    rep(i, <span class="number">1</span>, n)</span><br><span class="line">        colSize[colour[i]]++;</span><br><span class="line">        </span><br><span class="line">    rep(i, <span class="number">1</span>, n)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> edge : G[i])</span><br><span class="line">            <span class="keyword">if</span>(edge.type == <span class="number">3</span>)</span><br><span class="line">                accusations[colour[i]].insert(edge.v);</span><br><span class="line">    </span><br><span class="line">    rep(i, <span class="number">0</span>, colCnt)</span><br><span class="line">        <span class="keyword">if</span>(accusations[i].size() &gt; <span class="number">1</span>)&#123;</span><br><span class="line">            lying[i] = <span class="literal">true</span>;</span><br><span class="line">            truthful[i ^ <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    rep(i, <span class="number">0</span>, colCnt)&#123;</span><br><span class="line">        <span class="keyword">if</span>(lying[i] &amp;&amp; truthful[i])</span><br><span class="line">            kill();</span><br><span class="line">        <span class="keyword">if</span>(lying[i])</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> target : accusations[i])</span><br><span class="line">                innocent[target] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(truthful[i])</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> target : accusations[i])</span><br><span class="line">                criminal[target] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    rep(i, <span class="number">1</span>, n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(criminal[i] &amp;&amp; innocent[i])</span><br><span class="line">            kill();</span><br><span class="line">        <span class="keyword">if</span>(criminal[i])</span><br><span class="line">            criminalCnt++;</span><br><span class="line">        <span class="keyword">if</span>(!innocent[i])</span><br><span class="line">            suspectCnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(criminalCnt &gt; <span class="number">1</span>)</span><br><span class="line">        kill();</span><br><span class="line">    </span><br><span class="line">    rep(i, <span class="number">0</span>, colCnt)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!lying[i] &amp;&amp; !truthful[i] &amp;&amp; colSize[i] &amp;&amp; accusations[i].size()</span><br><span class="line">        &amp;&amp; colSize[i ^ <span class="number">1</span>] &amp;&amp; accusations[i ^ <span class="number">1</span>].size())&#123;</span><br><span class="line">            <span class="keyword">if</span>(*accusations[i].begin() == *accusations[i ^ <span class="number">1</span>].begin())</span><br><span class="line">                kill();</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">if</span>(specialSuspects.count(*accusations[i].begin())</span><br><span class="line">            &amp;&amp; specialSuspects.count(*accusations[i ^ <span class="number">1</span>].begin()))&#123;</span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(specialSuspects.count(*accusations[i].begin()))&#123;</span><br><span class="line">                <span class="keyword">if</span>(specialCriminal &amp;&amp; specialCriminal != *accusations[i].begin())</span><br><span class="line">                    kill();</span><br><span class="line">                specialCriminal = *accusations[i].begin();</span><br><span class="line">                specialSuspects.insert(*accusations[i ^ <span class="number">1</span>].begin());</span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(specialSuspects.count(*accusations[i ^ <span class="number">1</span>].begin()))&#123;</span><br><span class="line">                <span class="keyword">if</span>(specialCriminal &amp;&amp; specialCriminal != *accusations[i ^ <span class="number">1</span>].begin())</span><br><span class="line">                    kill();</span><br><span class="line">                specialCriminal = *accusations[i ^ <span class="number">1</span>].begin();</span><br><span class="line">                specialSuspects.insert(*accusations[i].begin());</span><br><span class="line">                i++;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(specialSuspects.size())</span><br><span class="line">                kill();</span><br><span class="line">                </span><br><span class="line">            specialSuspects.insert(*accusations[i].begin());</span><br><span class="line">            specialSuspects.insert(*accusations[i ^ <span class="number">1</span>].begin());</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(specialCriminal &amp;&amp; !criminalCnt)&#123;</span><br><span class="line">        <span class="keyword">if</span>(innocent[specialCriminal])</span><br><span class="line">            kill();</span><br><span class="line">        <span class="keyword">return</span> !<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, specialCriminal);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(specialCriminal &amp;&amp; criminalCnt)&#123;</span><br><span class="line">        rep(i, <span class="number">1</span>, n)</span><br><span class="line">            <span class="keyword">if</span>(criminal[i] &amp;&amp; i == specialCriminal &amp;&amp; !innocent[i])</span><br><span class="line">                <span class="keyword">return</span> !<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">        kill();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(specialSuspects.size() &amp;&amp; !criminalCnt)&#123;</span><br><span class="line">        <span class="keyword">int</span> tempCnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> person : specialSuspects)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!innocent[person])&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, person);</span><br><span class="line">                tempCnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!tempCnt)</span><br><span class="line">            kill();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(criminalCnt == <span class="number">1</span>)&#123;</span><br><span class="line">        rep(i, <span class="number">1</span>, n)</span><br><span class="line">            <span class="keyword">if</span>(criminal[i])&#123;</span><br><span class="line">                <span class="keyword">if</span>(innocent[i])</span><br><span class="line">                    kill();</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(suspectCnt == <span class="number">0</span>)</span><br><span class="line">            kill();</span><br><span class="line">        rep(i, <span class="number">1</span>, n)</span><br><span class="line">            <span class="keyword">if</span>(!innocent[i])</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>thyroidr
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO%20and%20AIC/AIO-2018-Senior/" title="AIO 2018 Senior">https://thyroidr.github.io/InfoBlogs/AIO-and-AIC/AIO and AIC/AIO-2018-Senior/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/InfoBlogs/tags/c/" rel="tag"># c++</a>
+              <a href="/InfoBlogs/tags/AIO/" rel="tag"># AIO</a>
+              <a href="/InfoBlogs/tags/contests/" rel="tag"># contests</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/InfoBlogs/Misc-Problems/Misc.%20Problems/apio-2010-patrol/" rel="prev" title="APIO 2010 Patrol">
+      <i class="fa fa-chevron-left"></i> APIO 2010 Patrol
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/InfoBlogs/DTOJ/DTOJ/DTOJ-4080/" rel="next" title="DTOJ 4080">
+      DTOJ 4080 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Street-Construction"><span class="nav-number">1.</span> <span class="nav-text">Street Construction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Coverage"><span class="nav-number">2.</span> <span class="nav-text">Cloud Coverage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Janitor"><span class="nav-number">3.</span> <span class="nav-text">Janitor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detective"><span class="nav-number">4.</span> <span class="nav-text">Detective</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryan Wang"
+      src="/InfoBlogs/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Ryan Wang</p>
+  <div class="site-description" itemprop="description">Museum of my involvement in Informatics Olympiads & competitive programming</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/InfoBlogs/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/InfoBlogs/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/InfoBlogs/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/thyroidr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;thyroidr" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ryanxiaowang2001@gmail.com" title="E-Mail → mailto:ryanxiaowang2001@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/rxw/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;rxw&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/InfoBlogs/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryan Wang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/InfoBlogs/lib/anime.min.js"></script>
+  <script src="/InfoBlogs/lib/velocity/velocity.min.js"></script>
+  <script src="/InfoBlogs/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/InfoBlogs/js/utils.js"></script>
+
+<script src="/InfoBlogs/js/motion.js"></script>
+
+
+<script src="/InfoBlogs/js/schemes/muse.js"></script>
+
+
+<script src="/InfoBlogs/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
