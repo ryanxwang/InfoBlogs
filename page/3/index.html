@@ -160,6 +160,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thyroidr.github.io/InfoBlogs/FARIO/FARIO/FARIO-2018-Greed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/InfoBlogs/images/avatar.png">
+      <meta itemprop="name" content="Ryan Wang">
+      <meta itemprop="description" content="Museum of my involvement in Informatics Olympiads & competitive programming">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="InfoBlogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/InfoBlogs/FARIO/FARIO/FARIO-2018-Greed/" class="post-title-link" itemprop="url">FARIO 2018 Greed</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-01-14 18:06:42" itemprop="dateCreated datePublished" datetime="2019-01-14T18:06:42+11:00">2019-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-17 11:38:56" itemprop="dateModified" datetime="2019-04-17T11:38:56+10:00">2019-04-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/InfoBlogs/categories/FARIO/" itemprop="url" rel="index"><span itemprop="name">FARIO</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://orac.amt.edu.au/cgi-bin/train/problem.pl?problemid=1008">Problem Link</a></p>
+<p>Whenever we see minimise the maximum or maximise the minimum, binary search is almost always the way to go, as is in this problem (with the exception of graph theory, where it is about half-half between bsearch and MST). With bsearch in this problem, we would be directly searching for the answer, and our decision problem would be whether we could divide the cake such that no piece is larger than $lim$ in no more than $k$ cuts. </p>
+<p>This could be solved with DP + two pointers. Let $f_{i, j}$ be the minimum number of cuts needed at the $i$-th horizontal cut and the $j$-th vertical cut.<br>$$f_{i, j} = min(f_{i, t_c}, f_{t_r, j}) + 1, t_c \le j, t_r \le i, \text{difference in area} \le lim$$</p>
+<p>Notice the as $t$ increases, $f_{i, t}$ and $f_{t, j}$ are non-decreasing. Hence, for calculating $f_{i, j}$, we would wish to minimise $t$, while adhering to the area limit. Iterating lexicographically (by rows and then columns) allows us to use two-pointers to make the time complexity of finding $t$ amortised constant. </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/InfoBlogs/FARIO/FARIO/FARIO-2018-Greed/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://thyroidr.github.io/InfoBlogs/FARIO/FARIO/FARIO-2017-Optimal-Delivery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -907,88 +991,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thyroidr.github.io/InfoBlogs/FARIO/FARIO/FARIO-2014-NSA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/InfoBlogs/images/avatar.png">
-      <meta itemprop="name" content="Ryan Wang">
-      <meta itemprop="description" content="Museum of my involvement in Informatics Olympiads & competitive programming">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="InfoBlogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/InfoBlogs/FARIO/FARIO/FARIO-2014-NSA/" class="post-title-link" itemprop="url">FARIO 2014 NSA</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-01-07 18:41:23" itemprop="dateCreated datePublished" datetime="2019-01-07T18:41:23+11:00">2019-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-17 11:38:56" itemprop="dateModified" datetime="2019-04-17T11:38:56+10:00">2019-04-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/InfoBlogs/categories/FARIO/" itemprop="url" rel="index"><span itemprop="name">FARIO</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="http://orac.amt.edu.au/cgi-bin/train/problem.pl?set=fario14&problemid=728">Problem Link</a></p>
-<p>Every time an email is sent from $u$ to $v$, we create a new version of $u$. This way we are able to maintain the answer using union find set. By ensuring that we are merging the sender to the receiver, we guarentee that the root for $x$ is the answer for $x$.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/InfoBlogs/FARIO/FARIO/FARIO-2014-NSA/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1060,7 +1062,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/InfoBlogs/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
